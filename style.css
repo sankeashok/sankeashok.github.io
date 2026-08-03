@@ -414,7 +414,7 @@ p { font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary); margin-bo
     padding: 8rem 5%;
 }
 
-.project-grid {
+.project-grid, .timeline-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;

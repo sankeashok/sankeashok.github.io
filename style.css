@@ -605,6 +605,7 @@ footer {
 @media (max-width: 768px) {
     /* Navbar & Hamburger */
     .hamburger { display: flex; z-index: 100; }
+    .navbar { background: rgba(15, 17, 21, 0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--glass-border); }
     .nav-links {
         position: absolute;
         top: 100%;
@@ -614,8 +615,8 @@ footer {
         backdrop-filter: blur(16px);
         flex-direction: column;
         align-items: center;
-        padding: 2rem 0;
-        gap: 1.5rem;
+        padding: 1.5rem 0; /* Fixes huge top gap */
+        gap: 1rem;
         border-bottom: 1px solid var(--glass-border);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         transition: clip-path 0.3s ease-in-out;
@@ -624,12 +625,16 @@ footer {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
-    /* Hero Section */
+    /* Hero Section - Fix massive avatar */
     .hero-section {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 120px;
+        padding-top: 100px;
         gap: 2rem;
+    }
+    .image-wrapper {
+        width: 250px;
+        height: 250px;
     }
     .hero-cta {
         justify-content: center;
@@ -641,26 +646,12 @@ footer {
     }
 
     /* General Spacing & Typography */
-    .container { padding: 0 1.5rem; }
-    h1 { font-size: 2.5rem; }
-    h2.section-title { font-size: 2rem; }
+    .container { padding: 0 1rem; }
+    h1 { font-size: 2rem; }
+    h2.section-title { font-size: 1.8rem; }
     
-    /* Timeline Fixes for Mobile */
-    .timeline::before { left: 0; }
-    .timeline-item {
-        width: 100%;
-        padding-left: 2rem;
-        padding-right: 0;
-    }
-    .timeline-item:nth-child(even) { left: 0; }
-    .timeline-dot {
-        left: 0 !important;
-        transform: translateX(-50%);
-    }
-    .timeline-date {
-        position: static;
-        margin-bottom: 0.5rem;
-        display: inline-block;
-        text-align: left;
+    /* Fix excessive padding on cards squishing text on mobile */
+    .glass-panel, .p-lg, .project-card, .timeline-card {
+        padding: 1.25rem !important;
     }
 }

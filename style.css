@@ -629,7 +629,9 @@ footer {
     .hero-section {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 100px;
+        padding-top: 120px; /* clear navbar */
+        justify-content: flex-start; /* prevent flex centering from pushing content up into navbar */
+        min-height: auto;
         gap: 2rem;
     }
     .image-wrapper {

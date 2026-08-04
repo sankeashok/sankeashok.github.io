@@ -648,7 +648,10 @@ footer {
     }
 
     /* General Spacing & Typography */
-    .container { padding: 0 1rem; }
+    .container { 
+        padding-left: 1rem; 
+        padding-right: 1rem; 
+    }
     h1 { font-size: 2rem; }
     h2.section-title { font-size: 1.8rem; }
     

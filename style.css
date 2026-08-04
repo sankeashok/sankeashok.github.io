@@ -650,8 +650,37 @@ footer {
     h1 { font-size: 2rem; }
     h2.section-title { font-size: 1.8rem; }
     
+    /* Touch Ergonomics & Active States */
+    * { -webkit-tap-highlight-color: transparent; }
+    .btn:active, .project-card:active, .timeline-card:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    .nav-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px; /* Touch target minimum */
+        padding: 0.5rem 1rem;
+        width: 100%;
+    }
+
     /* Fix excessive padding on cards squishing text on mobile */
     .glass-panel, .p-lg, .project-card, .timeline-card {
         padding: 1.25rem !important;
     }
+
+    /* Footer Safe Area */
+    footer {
+        padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+    }
+}
+
+/* Micro-devices (< 480px) */
+@media (max-width: 480px) {
+    .image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+    h1 { font-size: 1.8rem; }
 }

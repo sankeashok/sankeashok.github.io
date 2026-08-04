@@ -221,11 +221,11 @@ p { font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary); margin-bo
 
 /* Hero Section */
 .hero-section {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 80px;
+    padding-top: 150px;
+    padding-bottom: 80px;
     gap: 4rem;
 }
 
@@ -578,4 +578,89 @@ footer {
     background: rgba(0, 255, 204, 0.15) !important;
     animation: none;
     box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+}
+
+/* Unique Project Typography and Styles */
+.project-aegis p, .project-aegis h3 { font-family: 'Fira Code', monospace; }
+.project-aegis { border-left: 4px solid rgba(0, 255, 204, 0.5); }
+
+.project-lifebridge p, .project-lifebridge h3 { font-family: 'Space Grotesk', sans-serif; }
+.project-lifebridge { border-left: 4px solid rgba(243, 156, 18, 0.5); }
+
+.project-vital p, .project-vital h3 { font-family: 'Playfair Display', serif; }
+.project-vital { border-left: 4px solid rgba(46, 204, 113, 0.5); }
+
+.project-anomaly p, .project-anomaly h3 { font-family: 'Oswald', sans-serif; }
+.project-anomaly { border-left: 4px solid rgba(231, 76, 60, 0.5); }
+
+.project-helios p, .project-helios h3 { font-family: 'Inter', sans-serif; }
+.project-helios { border-left: 4px solid rgba(52, 152, 219, 0.5); }
+
+.project-scaler p, .project-scaler h3 { font-family: 'Caveat', cursive; font-size: 1.15rem; }
+.project-scaler { border-left: 4px solid rgba(155, 89, 182, 0.5); }
+
+/* ==========================================================================
+   Mobile & Responsive Styles
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Navbar & Hamburger */
+    .hamburger { display: flex; z-index: 100; }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 17, 21, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--glass-border);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.3s ease-in-out;
+    }
+    .nav-links.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Hero Section */
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 120px;
+        gap: 2rem;
+    }
+    .hero-cta {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .social-links {
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+
+    /* General Spacing & Typography */
+    .container { padding: 0 1.5rem; }
+    h1 { font-size: 2.5rem; }
+    h2.section-title { font-size: 2rem; }
+    
+    /* Timeline Fixes for Mobile */
+    .timeline::before { left: 0; }
+    .timeline-item {
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 0;
+    }
+    .timeline-item:nth-child(even) { left: 0; }
+    .timeline-dot {
+        left: 0 !important;
+        transform: translateX(-50%);
+    }
+    .timeline-date {
+        position: static;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+        text-align: left;
+    }
 }
